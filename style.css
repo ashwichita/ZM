@@ -1,0 +1,686 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Just Me Again Down Here', cursive;
+    height: 100%;
+
+}
+
+a:-webkit-any-link {
+    color: #f1f1f1; 
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+::selection{
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.main-section-content{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s ease-in;
+}
+
+.main-section-content.active{
+    opacity: 1;
+}
+/*******************************************HEADER*******************************************************/
+
+#header{
+    height: 7vh;
+    width: 100vw;
+    background: #0e0e0e;;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    transition: height .5s cubic-bezier(0.68, -0.55, 0.265, 1.55), filter .3s ease-in;
+}
+
+
+#header h1{
+    margin-right: auto;
+    padding-left: 5vw;
+    font-family: 'Shadows Into Light Two', cursive;    
+    color: #f1f1f1;
+    font-size: 2.5rem;
+    letter-spacing: .5rem;
+    cursor: pointer;
+
+}
+#mainMenu{
+    margin-left: auto;
+    list-style-type: none;
+    padding-right: 5vw;
+}
+.menu-item{
+    display: inline;
+    letter-spacing: 1px;
+    font-family: 'Shadows Into Light Two', cursive;    
+    font-size: 1.4rem;
+    padding: 0 1vw .5vh 1vw;
+    line-height: 10vh;
+    cursor: pointer;
+}
+
+.menu-item.active{
+    letter-spacing: 3px;
+    border-bottom: 1px white solid;
+    transition: .5s;
+}
+
+/*******************************************WELCOME SECTION*******************************************************/
+
+
+
+
+
+
+
+#welcomeSection{
+    width: 100vw;
+    height: 100vh;
+    background: url(media/main_section_background_2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: 0;
+}
+
+#welcomeSectionText{
+    position: relative;
+    width: 40vw;
+    height: 40vh;
+    top: 30vh;
+    left: 50vw;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+#welcomeSectionText h1{
+    font-size: 7rem;
+    line-height: 0;
+}
+#welcomeSectionText h3{
+    font-size: 3rem;
+    line-height: 0;
+}
+#welcomeSectionText img{
+    width: 3vw;
+    padding: 2vh;
+}
+
+#welcomeSectionText p{
+    font-size: 2.5rem;
+    margin-top: -1vh;
+}
+
+/*******************************************ABOUT SECTION*******************************************************/
+
+#aboutSection{
+    color: #f1f1f1;
+    background: #383838;
+    padding-top: 3vh;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#aboutSection p{
+    text-indent: 3rem;
+    font-size: 2rem;
+    width: 70vw;
+    margin: auto;
+    text-align: justify;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+#aboutSection h2{
+    font-size: 3rem;
+    margin: 0;
+    text-align: center;
+}
+
+
+/******************************************SONG SECTION******************************************************/
+
+#songSection{
+    height: 90vh;
+    background: #0e0e0e;
+}
+
+#songSection iframe{
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+}
+
+/*******************************************LYRICS SECTION*******************************************************/
+
+
+#lyricsSection{
+    background: #1f1f1f;
+    height: 60vh;
+}
+
+
+#lyricsContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lyricsFull{
+    width: 80vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lyrics-full{
+    color: #f1f1f1;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.5rem;
+    width: 80vw;
+    height: 60vh;
+    column-count: 2;
+    display: none;
+}
+
+.lyrics-full.active{
+    display: block;
+}
+
+.lyrics-full p {
+    width: 40vw;
+    margin: 5vh;
+    
+}
+
+#lyricsMenu{
+    width: 20vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.lyrics-element{
+    border-bottom: 1px #2c2c2c solid;
+    width: 100%;
+    text-align: center;
+    font-family: Monospace;
+    color: #f1f1f1;
+    font-size: 1.2rem;
+    transition: 1s ease-out;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lyrics-element:hover{
+    background: rgba(250, 250, 250, 0.08);
+}
+
+.lyrics-element.active{
+    color: #f1f1f1;
+    background: #0e0e0e;
+}
+
+
+
+/*******************************************GALLERY SECTION*******************************************************/
+
+
+#gallerySection{
+    background: #0e0e0e;
+    overflow: visible;
+    height: 70vh;
+}
+
+#gallerySectionContent{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    overflow: hidden;
+    opacity: 1;
+
+}
+
+#galleryModal{
+    width: 100vw;
+    height: 70vh;
+    position: absolute;
+    background-image: url(media/gallery/2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(5px) brightness(.3);
+    z-index: 0;
+    transition: filter .5s ease-out, background .4s;
+}
+
+#galleryContainer{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s ease;
+    z-index: 1;
+}
+
+.gallery-item{
+    height: 20vh;
+    width: 20vh;
+    margin: 1vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img{
+    max-height: 150%;
+    max-width: 180%;
+}
+
+.gallery-item img:hover{
+    filter: brightness(1.2);
+    transition: .5s ease-out;
+}
+
+
+/*******************************************CONTACT SECTION*******************************************************/
+
+#contactSection{
+    background: #121212;
+    height: 60vh;
+
+}
+
+#contactSection h2{
+    color: #f1f1f1;
+    margin: auto;
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+}
+
+#contactFormContainer{
+    margin-left: 3vw;
+    width: 47vw;
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#contactFormCredentials{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.contact-form{
+    width: 15vw;
+    height: 3vh;
+    text-align: end;
+    outline: none;
+    border: 2px #0e0e0e solid;
+    background: #1f1f1f;
+    color: #f1f1f1;
+    transition: .3s ease-out;
+    padding-right: 1vw;
+}
+
+.contact-form:focus{
+    background: rgba(241, 241, 241, 0.2);
+}
+
+::placeholder{
+    color: rgba(241, 241, 241, 0.35);
+}
+
+#contactText{
+    height: 40vh;
+    width: 30vw;
+    padding-top: 1vw;
+}
+
+#contactButton{
+    height: 5vh;
+    width: 8vw;
+    color: #9a9a9a;
+    background: rgb(255,255,255);
+    background: linear-gradient(172deg, rgba(255,255,255,0.03) 1%, rgba(75, 75, 75, 0.49) 46%, rgba(255,255,255,0.03) 98%);
+    text-align: center;
+    line-height: 5vh;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#contactButton:active{
+    transform: scale(.95);
+}
+
+#contactName{
+    width: 10vw;
+}
+
+
+/*******************************************FOOTER*******************************************************/
+
+#footer{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #0e0e0e;
+    background: #0e0e0e;
+    transition: 1s ease-out;
+    padding-right: 5vw;
+}
+
+#contactContainer{
+    width: 20vw;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#contactContainer img{
+    height: 4vh;
+    transition: filter .2s ease-out;
+}
+
+#contactContainer img:hover{
+    filter: invert();
+}
+
+#footer h3{
+    width: 10vw;
+    color: #7c7c7c;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    #header{
+        display: none;
+    }
+    
+    #welcomeSectionText{
+        margin: auto;
+        left: 0;
+        top: 20vh;
+        padding: 2vh;
+        width: 80vw;
+        height: 60vh;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    #welcomeSectionText h1{
+        font-size: 3rem;
+    }
+    #welcomeSectionText h3{
+        font-size: 2rem;
+    }
+    #welcomeSectionText p{
+        font-size: 1.8rem;
+    }
+    #welcomeSectionText img{
+        width: 7vh;
+    }
+    
+    #aboutSection{
+        height: 80vh;
+        overflow: hidden;
+    }
+    
+    #aboutSection p{
+        text-indent: 5rem;
+        width: 90vw;
+        font-size: 1.5rem;
+        padding-bottom: 1vh;;
+    }
+    
+    #songSection{
+        height: 80vh;
+        background: #0e0e0e;
+    }
+    #songSection iframe{
+        width: 100vw;
+        height: 70vh;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: white;
+    }
+    
+    #lyricsSection{
+        height: 90vh;
+        overflow: hidden;
+    }
+    
+    #lyricsContainer{
+        flex-direction: column-reverse;
+    }
+    
+    #lyricsMenu{
+        flex-direction: row;
+        width: 100vw;
+        height: 7vh;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+    
+    .lyrics-element{
+        height: 10vh;
+        border-bottom: none;
+        border-right: 1px #f1f1f1 solid;
+        font-size: 1rem;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        white-space: nowrap;
+    }
+    
+    #lyricsFull{
+        width: 100vw;
+        column-count: 1;
+    }
+    
+    .lyrics-full{
+        font-size: 1rem;
+        word-wrap: normal;
+        overflow-y: scroll;
+        margin-top: 10vh;
+        column-count: 1;
+    }
+    
+    #gallerySection{
+        height: 100vh;
+    }
+    
+    #galleryContainer{
+        overflow: scroll;
+        top: 50%;
+        position: relative;
+        transform: translateY(-50%);
+        height: 100%;
+    }
+    #gallerySectionContent{
+        height: 100vh;
+    }
+    #galleryModal{
+        height: 100vh;
+    }
+    
+    
+    
+    #contactSection{
+        background: #121212;
+        height: 70vh;
+
+    }
+
+    #contactSection h2{
+        font-size: 2rem;
+        padding-bottom: 3vh;
+        line-height: 4vh;
+    }
+
+    #contactFormContainer{
+        margin: auto;
+        width: 90vw;
+        height: 60vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        
+    }
+
+    #contactFormCredentials{
+        height: 15vh;
+        width: 90vw;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+
+    .contact-form{
+        width: 20vw;
+        height: 7vh;
+    }
+
+    #contactName{
+        width: 35vw;
+    }
+    #contactEmail{
+        width: 55vw;
+    }
+    #contactSubject{
+        width: 45vw;
+    }
+    #contactText{
+        height: 40vh;
+        width: 90vw;
+    }
+
+    #contactButton{
+        height: 6vh;
+        width: 35vw;
+        margin-left: 10vw;
+        font-size: 2rem;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    #header{
+        display: none;
+    }
+
+    #welcomeSectionText{
+        width: 50vw;
+        top: 20vh;
+        left: 45vw;
+    }
+
+    #welcomeSectionText h1{
+        font-size: 3rem;
+    }
+    #welcomeSectionText h3{
+        font-size: 2rem;
+    }
+    #welcomeSectionText img{
+        width: 7vw;
+    }
+
+    #welcomeSectionText p{
+        font-size: 1.7rem;
+    }
+    
+    #aboutSection{
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    #aboutSection p{
+        text-indent: 5rem;
+        width: 90vw;
+        font-size: 1.5rem;
+        padding-bottom: 1vh;;
+    }
+    
+    #lyricsSection{
+        height: 100vh;
+    }
+
+
+    #lyricsContainer{
+        width: 100vw;
+    }
+
+    #lyricsFull{
+        height: 100vh;
+        overflow: scroll;
+    }
+
+    .lyrics-full{
+        font-size: 1.2rem;
+        height: 70vh;
+    }
+    
+    #gallerySection{
+        height: 100vh;
+        width: 100vw;
+        
+    }
+
+    #gallerySectionContent{
+        height: 90vh;
+        width: 90vw;
+
+    }
+
+    #galleryModal{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #galleryContainer{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .gallery-item{
+        height: 25vh;
+        width: 25vh;
+    }
+
+    
+}
+
